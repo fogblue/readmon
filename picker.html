@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Readmon — 폴더 선택</title>
+<!--
+  Readmon 폴더 선택 창구.
+
+  왜 앱 안이 아니라 웹인가 — `drive.file` 범위에서 권한을 부여하는 길은 Google
+  Picker 하나뿐인데, 구글은 **iOS용 Picker SDK를 내지 않는다**(모바일 문서는
+  안드로이드 경로만 적고 그 외 플랫폼은 "기본 브라우저 새 탭"이라고 안내한다).
+  피커는 부모 페이지의 **출처(origin)**가 콘솔의 「승인된 JavaScript 출처」와
+  맞아야 동작하는데, 앱 번들의 `file://`은 origin이 `null`이고 커스텀 스킴도
+  등록할 수 없는 형태다. 앱 안에서 하려면 로컬 HTTP 서버를 띄워야 한다.
+
+  그래서 정적 페이지 하나를 두고 `ASWebAuthenticationSession`(실제 사파리)으로
+  연다. 구글이 막는 것은 **임베디드 웹뷰 안의 OAuth 동의 화면**이지 이 경로가
+  아니다 — 게다가 로그인은 앱이 이미 끝내고 토큰만 넘겨 준다.
+
+  앱이 넘기는 값은 전부 URL **프래그먼트**에 실린다. 프래그먼트는 서버로
+  전송되지 않으므로 GitHub Pages 로그에 토큰이 남지 않는다.
+
+    picker.html#token=<액세스 토큰>&key=<API 키>&app=<프로젝트 번호>&redirect=<콜백>
+
+  **토큰은 앱이 자기 클라이언트로 받은 것을 그대로 쓴다.** 페이지가 따로
+  로그인하지 않는다 — 그러면 부여(웹 클라이언트)와 조회(iOS 클라이언트)의
+  클라이언트가 갈리는데, 그때도 권한이 이어지는지가 확인되지 않았다.
+-->
+<style>
+:root { color-scheme: light dark; --fg:#1a1a1a; --muted:#5c5c5c; --bg:#fdfdfc;
+        --line:#e0ddd6; --bad:#b3261e; --card:#f6f4ef; }
+@media (prefers-color-scheme: dark) {
+  :root { --fg:#e8e6e1; --muted:#a8a49c; --bg:#16150f; --line:#33302a;
+          --bad:#ff6b5e; --card:#1f1d16; }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin:0; display:flex; align-items:center; justify-content:center;
+       background:var(--bg); color:var(--fg); padding:24px;
+       font: 15px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+       word-break: keep-all; text-align:center; }
+main { max-width: 26rem; }
+h1 { font-size:1.1rem; margin:0 0 .5rem; }
+p { color:var(--muted); margin:.25rem 0; }
+p.bad { color:var(--bad); }
+button { font:inherit; font-weight:600; padding:10px 18px; margin-top:1rem;
+       background:var(--fg); color:var(--bg); border:0; border-radius:9px; cursor:pointer; }
+.spinner { width:26px; height:26px; margin:0 auto 14px; border-radius:50%;
+       border:3px solid var(--line); border-top-color:var(--fg);
+       animation: spin .9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<main>
+  <div class="spinner" id="spinner"></div>
+  <h1 id="title">폴더를 여는 중…</h1>
+  <p id="msg">잠시만 기다려 주세요.</p>
+  <div id="actions"></div>
+</main>
+
+<script src="https://apis.google.com/js/api.js" async defer onload="onGapi()" onerror="fail('구글 스크립트를 불러오지 못했습니다.', '네트워크를 확인하고 다시 시도해 주세요.')"></script>
+<script>
+const $ = id => document.getElementById(id);
+const params = new URLSearchParams(location.hash.slice(1));
+const TOKEN    = params.get('token')    || '';
+const API_KEY  = params.get('key')      || '';
+const APP_ID   = params.get('app')      || '';
+const REDIRECT = params.get('redirect') || '';
+
+// 프래그먼트를 즉시 지운다 — 뒤로 가기나 공유로 토큰이 새 나가지 않게.
+if (location.hash) history.replaceState(null, '', location.pathname);
+
+function show(title, msg, isBad) {
+  $('spinner').style.display = 'none';
+  $('title').textContent = title;
+  $('msg').textContent = msg;
+  $('msg').className = isBad ? 'bad' : '';
+}
+
+function fail(title, msg) {
+  show(title, msg, true);
+  if (REDIRECT) addButton('앱으로 돌아가기', () => back({ error: 'failed' }));
+}
+
+function addButton(label, fn) {
+  const b = document.createElement('button');
+  b.textContent = label;
+  b.onclick = fn;
+  $('actions').appendChild(b);
+}
+
+/// 앱으로 돌아간다. 커스텀 스킴이라 `ASWebAuthenticationSession`이 가로챈다.
+function back(fields) {
+  if (!REDIRECT) return;
+  const q = new URLSearchParams(fields).toString();
+  location.replace(REDIRECT + (REDIRECT.includes('?') ? '&' : '?') + q);
+}
+
+function onGapi() {
+  if (!TOKEN || !API_KEY || !APP_ID || !REDIRECT) {
+    // 앱이 아니라 사람이 주소창으로 들어온 경우가 대부분이다.
+    show('이 페이지는 Readmon 앱이 여는 화면입니다.',
+         '앱에서 원격 소스 ▸ Google Drive ▸ 폴더 선택으로 들어오세요.', true);
+    return;
+  }
+  gapi.load('picker', { callback: openPicker, onerror: () =>
+    fail('폴더 선택기를 불러오지 못했습니다.', '잠시 뒤 다시 시도해 주세요.') });
+}
+
+function openPicker() {
+  try {
+    const view = new google.picker.DocsView(google.picker.ViewId.FOLDERS)
+      .setIncludeFolders(true)
+      .setSelectFolderEnabled(true)
+      .setMimeTypes('application/vnd.google-apps.folder');
+
+    new google.picker.PickerBuilder()
+      .setAppId(APP_ID)
+      .setOAuthToken(TOKEN)
+      .setDeveloperKey(API_KEY)
+      .addView(view)
+      .setTitle('서재로 쓸 폴더를 고르세요')
+      .setCallback(onPicked)
+      .build()
+      .setVisible(true);
+
+    show('폴더를 고르세요', '고른 폴더와 그 안의 책만 Readmon이 읽습니다.');
+  } catch (e) {
+    fail('폴더 선택기를 열지 못했습니다.', String(e && e.message || e));
+  }
+}
+
+function onPicked(data) {
+  const A = google.picker.Action;
+  if (data.action === A.PICKED) {
+    const doc = data.docs && data.docs[0];
+    if (!doc) { back({ error: 'empty' }); return; }
+    show('폴더를 골랐습니다', '앱으로 돌아갑니다…');
+    back({ id: doc.id, name: doc.name || '' });
+  } else if (data.action === A.CANCEL) {
+    back({ error: 'cancelled' });
+  }
+}
+</script>
+</body>
+</html>
