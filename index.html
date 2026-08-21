@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Readmon</title>
+<meta name="description" content="Readmon is an e-book reader for iPhone and iPad that lets you read your own books and listen to them in an AI voice, entirely on your device.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Readmon">
+<meta property="og:title" content="Readmon">
+<meta property="og:description" content="Readmon is an e-book reader for iPhone and iPad that lets you read your own books and listen to them in an AI voice, entirely on your device.">
+<meta property="og:image" content="https://mindols-tts.duckdns.org/logo.png">
+<meta property="og:url" content="https://mindols-tts.duckdns.org/">
 <style>
 :root { color-scheme: light dark; --fg:#1a1a1a; --muted:#5c5c5c; --bg:#fdfdfc;
         --line:#e0ddd6; --accent:#7a5c3e; --card:#f6f4ef; }
@@ -46,11 +55,32 @@ li { margin:.35em 0; }
 li > ul, li > ol { margin:.35em 0; }
 footer { max-width:44rem; margin:4em auto 0; padding-top:1.5em;
          border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+/* 마크는 iOS에서 스퀘어클 마스크가 씌워지는데 웹에는 그 마스크가 없다.
+   22.37%는 그 곡률의 통용 근사치다 — 안 주면 네모난 판으로 보인다. */
+header.site a { display:inline-flex; align-items:center; gap:.5em; }
+img.mark { width:22px; height:22px; border-radius:22.37%; }
+img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
+                margin:2.4em 0 .2em; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Readmon",
+  "applicationCategory": "BookApplication",
+  "operatingSystem": "iOS",
+  "url": "https://mindols-tts.duckdns.org/",
+  "image": "https://mindols-tts.duckdns.org/logo.png",
+  "privacyPolicy": "https://mindols-tts.duckdns.org/privacy.html",
+  "author": { "@type": "Person", "name": "이민행" },
+  "description": "Readmon is an e-book reader for iPhone and iPad that lets you read your own books and listen to them in an AI voice, entirely on your device. It handles EPUB, TXT, PDF and comic archives in one library."
+}
+</script>
 </head>
 <body>
-<header class="site"><a href="./">Readmon</a></header>
+<header class="site"><a href="./"><img class="mark" src="logo.png" alt="Readmon 앱 아이콘" width="22" height="22">Readmon</a></header>
 <main>
+<img class="hero-mark" src="logo.png" alt="Readmon 앱 아이콘" width="104" height="104">
 <h1>Readmon</h1>
 <p class="tagline"><strong>Readmon</strong> is an e-book reader for iPhone and iPad that
 lets you read your own books and listen to them in an AI voice, entirely on your device.</p>
