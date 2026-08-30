@@ -69,7 +69,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <main>
 <h1>이용약관</h1>
 <p><strong>Readmon</strong></p>
-<p>시행일: 2026-08-14</p>
+<p>시행일: 2026-08-14 최종 수정일: 2026-08-31</p>
 <hr>
 <h2>제1조 (목적)</h2>
 <p>이 약관은 Readmon(이하 "앱")의 이용 조건과 절차, 이용자와 개발자의 권리·의무를 정합니다.</p>
@@ -93,11 +93,26 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 </ol>
 <h2>제4조 (외부 서비스 연결)</h2>
 <ol>
-<li>이용자는 Calibre-Web, OPDS, WebDAV, Dropbox, Google Drive, OneDrive 등 외부 서비스를 연결해 파일을 받아올 수 있습니다.
+<li>이용자는 Calibre-Web, OPDS, WebDAV, Dropbox, OneDrive 등 외부 서비스를 연결해 파일을 받아올 수 있습니다.
 </li>
 <li><strong>연결 대상 서버와 계정은 이용자가 정합니다.</strong> 개발자는 그 서비스의 운영자가 아니며, 해당 서비스의 가용성·내용·약관에 대해 책임지지 않습니다.
 </li>
 <li>외부 서비스 이용에는 해당 서비스의 약관이 적용됩니다.
+</li>
+</ol>
+<h2>제4조의2 (인물별 목소리 — 이용자 본인의 API 키)</h2>
+<ol>
+<li>「인물별 목소리」는 등장인물마다 다른 목소리로 낭독하는 <strong>선택 기능</strong>이며, <strong>기본으로 꺼져 있습니다.</strong>
+</li>
+<li>이 기능은 이용자가 <strong>Google AI Studio에서 본인 명의로 발급한 API 키</strong>를 직접 입력해야만 동작합니다. 개발자는 키를 제공하지 않습니다.
+</li>
+<li>이 기능을 켜면 <strong>읽고 있는 회차의 본문이 이용자의 키로 Google에 직접 전송됩니다.</strong> 개발자의 서버를 거치지 않습니다. 전송되는 내용과 저장되는 내용은 개인정보 처리방침 3-1항에 적습니다.
+</li>
+<li><strong>키 사용에 따르는 요금은 이용자가 부담합니다.</strong> 앱은 하루 100회차로 사용량을 제한하지만, 이 제한이 요금이 부과되지 않음을 보장하지 않습니다. 결제가 연결된 키를 입력하면 그 사용분은 이용자에게 청구되며, 앱은 이용자의 키가 어느 쪽인지 알 수 없습니다.
+</li>
+<li><strong>판별 결과의 정확성을 보증하지 않습니다.</strong> 인물이 잘못 배정될 수 있으며, 이용자는 앱에서 목소리를 직접 고쳐 고정할 수 있습니다.
+</li>
+<li>Google의 서비스 제공 여부·정책·요금은 개발자가 정하거나 통제할 수 없습니다. 전송된 내용의 처리에는 Google의 약관과 개인정보처리방침이 적용됩니다.
 </li>
 </ol>
 <h2>제5조 (AI 목소리 — 유료 기능)</h2>
@@ -111,6 +126,19 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <li>AI 목소리를 제외한 기능(읽기, 서재, 원격 연결 등)은 구매하지 않아도 이용할 수 있습니다.
 </li>
 <li><strong>가족 공유(Family Sharing)를 지원하지 않습니다.</strong>
+</li>
+</ol>
+<h2>제5조의2 (광고 및 광고 제거 이용권)</h2>
+<ol>
+<li>앱은 <strong>서재 화면 하단에 배너 광고</strong>를 표시합니다. 책을 읽거나 듣는 화면에는 광고가 표시되지 않습니다.
+</li>
+<li>광고는 Google AdMob이 게재하며, 앱은 <strong>비개인화 광고만</strong> 요청합니다. 광고 게재와 관련해 처리되는 정보는 개인정보 처리방침 1-1항에 적습니다.
+</li>
+<li><strong>광고의 내용은 개발자가 정하지 않습니다.</strong> 광고에 표시된 상품·서비스의 거래는 이용자와 해당 광고주 사이의 것이며, 개발자는 그 거래에 관여하지 않고 책임지지 않습니다.
+</li>
+<li><strong>광고 제거 이용권</strong>은 한 번 구매하면 계속 이용할 수 있는 영구 이용권이며, 구매하면 배너 광고가 표시되지 않고 광고 요청도 일어나지 않습니다.
+</li>
+<li><strong>AI 목소리 영구 이용권을 구매한 경우에도 광고가 표시되지 않습니다.</strong> 두 상품을 모두 구매할 필요는 없습니다.
 </li>
 </ol>
 <h2>제6조 (결제·환불)</h2>
@@ -162,6 +190,8 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 </li>
 <li>FluidAudio — 음성 합성 실행
 </li>
+<li>Google Mobile Ads SDK — 광고 표시
+</li>
 <li>Supertonic 음성 합성 모델 — 앱 안의 고지 화면에서 라이선스와 출처를 확인할 수 있습니다
 </li>
 </ul>
@@ -172,7 +202,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <hr>
 <p><strong>문의</strong>: <a href="mailto:fogblue@googlegroups.com">fogblue@googlegroups.com</a></p>
 <blockquote>
-<p><strong>이 문서는 법률 전문가의 검토를 거치지 않은 초안입니다.</strong> 내용은 2026-08-07 기준 앱의 실제 동작을 코드에서 확인해 작성했습니다.</p>
+<p><strong>이 문서는 법률 전문가의 검토를 거치지 않은 초안입니다.</strong> 내용은 2026-08-31 기준 앱의 실제 동작을 코드에서 확인해 작성했습니다.</p>
 </blockquote>
 </main>
 <footer>Readmon · 개발자 이민행 · <a href="mailto:fogblue@googlegroups.com">fogblue@googlegroups.com</a></footer>
