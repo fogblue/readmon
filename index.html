@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Readmon</title>
-<meta name="description" content="Readmon is an e-book reader for iPhone and iPad that lets you read your own books and listen to them in an AI voice, entirely on your device.">
+<meta name="description" content="Readmon is an e-book reader for iPhone, iPad and Android that lets you read your own books and listen to them in an AI voice, entirely on your device.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Readmon">
 <meta property="og:title" content="Readmon">
-<meta property="og:description" content="Readmon is an e-book reader for iPhone and iPad that lets you read your own books and listen to them in an AI voice, entirely on your device.">
+<meta property="og:description" content="Readmon is an e-book reader for iPhone, iPad and Android that lets you read your own books and listen to them in an AI voice, entirely on your device.">
 <meta property="og:image" content="https://mindols-tts.duckdns.org/logo.png">
 <meta property="og:url" content="https://mindols-tts.duckdns.org/">
 <style>
@@ -68,12 +68,12 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
   "@type": "SoftwareApplication",
   "name": "Readmon",
   "applicationCategory": "BookApplication",
-  "operatingSystem": "iOS",
+  "operatingSystem": "iOS, Android",
   "url": "https://mindols-tts.duckdns.org/",
   "image": "https://mindols-tts.duckdns.org/logo.png",
   "privacyPolicy": "https://mindols-tts.duckdns.org/privacy.html",
   "author": { "@type": "Person", "name": "이민행" },
-  "description": "Readmon is an e-book reader for iPhone and iPad that lets you read your own books and listen to them in an AI voice, entirely on your device. It handles EPUB, TXT, PDF and comic archives in one library."
+  "description": "Readmon is an e-book reader for iPhone, iPad and Android that lets you read your own books and listen to them in an AI voice, entirely on your device. It handles EPUB, TXT, PDF and comic archives in one library."
 }
 </script>
 </head>
@@ -82,49 +82,70 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <main>
 <img class="hero-mark" src="logo.png" alt="Readmon 앱 아이콘" width="104" height="104">
 <h1>Readmon</h1>
-<p class="tagline"><strong>Readmon</strong> is an e-book reader for iPhone and iPad that
+<p class="tagline"><strong>Readmon</strong> is an e-book reader for iPhone, iPad and Android that
 lets you read your own books and listen to them in an AI voice, entirely on your device.</p>
 <p><strong>Readmon</strong>은 가지고 있는 책을 읽고
-<strong>AI 목소리로 들을 수 있는 iPhone·iPad용 전자책 리더</strong>입니다. EPUB · TXT · PDF · 만화 파일을 한 앱에서
+<strong>AI 목소리로 들을 수 있는 iPhone·iPad·Android용 전자책 리더</strong>입니다. EPUB · TXT · PDF · 만화 파일을 한 앱에서
 관리하고, 눈으로 읽던 자리에서 그대로 듣기로 넘어갈 수 있습니다. 운전이나 이동처럼
 화면을 계속 보기 어려운 상황에서도 읽던 책을 이어 갈 수 있게 만든 앱입니다.</p>
 
 <h2>무엇을 하는 앱인가</h2>
 <ul>
 <li><strong>여러 형식을 한곳에서</strong> — EPUB · TXT · PDF · 만화(ZIP · CBZ · RAR · 7z)</li>
-<li><strong>기기 안에서 도는 AI 낭독</strong> — 책의 문장이 서버로 전송되지 않습니다.
-비행기 모드에서도 낭독됩니다</li>
+<li><strong>기기 안에서 도는 AI 낭독</strong> — 낭독을 위해 책의 문장이 서버로
+전송되지 않습니다. 비행기 모드에서도 낭독됩니다. 예외는 이용자가 자신의 API 키를 넣어
+켜는 「인물별 목소리」 하나뿐입니다</li>
 <li><strong>읽기와 듣기가 한 자리를 공유</strong> — 읽던 위치에서 바로 들을 수 있고,
 듣던 자리에서 바로 읽을 수 있습니다</li>
-<li><strong>내 서재를 어디에 두든</strong> — 기기, iCloud Drive, 그리고 이용자가
-직접 연결한 원격 서재(Calibre-Web · OPDS · WebDAV · Dropbox · Google Drive ·
-OneDrive)에서 책을 가져옵니다</li>
+<li><strong>내 서재를 어디에 두든</strong> — 기기, iCloud Drive(iPhone·iPad), 그리고 이용자가
+직접 연결한 원격 서재(Calibre-Web · OPDS · WebDAV · Dropbox · OneDrive)에서 책을
+가져옵니다</li>
 </ul>
 
-<h2>Google Drive를 쓰는 방식</h2>
-<p>이용자가 Google Drive를 연결하면, 앱은 <strong>이용자가 직접 폴더를 열어 볼 때
-그 안의 목록을 읽고, 이용자가 고른 책 파일 하나를 내려받습니다.</strong> 그것이
-전부입니다 — 파일을 만들거나 고치거나 공유하지 않습니다. 통신은 이용자의 기기와
-Google 사이에서 직접 이루어지며 <strong>개발자의 서버를 거치지 않고, 개발자는
-이용자의 Drive 데이터를 볼 수 없습니다.</strong> 자세한 내용은
-<a href="privacy.html">개인정보 처리방침</a>에 있습니다.</p>
+<h2>Google 계정을 쓰는 방식</h2>
+<p>Google 계정은 <strong>독서 기록 동기화</strong>에만 쓰이며, 이 기능은 기본으로
+꺼져 있습니다. 이용자가 자신의 Google 계정을 직접 연결하면, 앱은 <strong>그 계정의
+Google Drive 안에 있는 Readmon 전용 저장 공간에 독서 기록을 저장하고, 같은 계정을
+연결한 다른 기기에서 그것을 읽어 옵니다.</strong> 요청하는 권한은
+<code>drive.appdata</code> 하나뿐이어서, 앱은 이 전용 공간 안의 파일만 다루며
+<strong>이용자의 Drive에 있는 다른 파일·폴더는 읽지도 고치지도 않습니다.</strong></p>
+<p>저장되는 독서 기록에는 읽은 위치·책갈피·하이라이트·감상평과 함께 작품의
+제목·저자, 그리고 이용자가 직접 하이라이트한 문장처럼 <strong>책에서 따온
+구절</strong>이 들어 있습니다. <strong>책 파일 자체는 올라가지 않습니다.</strong>
+연결한 계정을 화면에 보여 주기 위해 그 계정의 이메일 주소와 표시 이름을 읽어
+기기에 보관합니다. 통신은 이용자의 기기와 Google 사이에서 직접 이루어지며
+<strong>개발자의 서버를 거치지 않고, 개발자는 그 내용을 볼 수 없습니다.</strong>
+자세한 내용은 <a href="privacy.html">개인정보 처리방침</a> 6-1항에 있습니다.</p>
 
 <h2>About Readmon</h2>
-<p><strong>Readmon</strong> is an e-book reader for iPhone and iPad that lets you
+<p><strong>Readmon</strong> is an e-book reader for iPhone, iPad and Android that lets you
 <strong>read your own books and listen to them in an AI voice</strong>. It handles
 EPUB, TXT, PDF and comic archives in one library, and you can switch between
 reading and listening without losing your place — useful while driving,
 commuting, or any time looking at a screen isn't practical.</p>
-<p>Speech synthesis runs <strong>entirely on the device</strong>: the text of your
-books is never sent to a server, and narration works in airplane mode. Books can
-come from the device itself, from iCloud Drive, or from a remote library the
-reader connects on their own — Calibre-Web, OPDS, WebDAV, Dropbox, Google Drive
-or OneDrive.</p>
-<p>When a reader connects Google Drive, Readmon <strong>lists the folder the
-reader opens and downloads the single file they choose</strong> — nothing else.
-It never writes, modifies or shares files. All requests go directly from the
-reader's device to Google; the developer runs no server and cannot see any Drive
-data.</p>
+<p>Speech synthesis runs <strong>entirely on the device</strong>: narration never
+sends the text of your books to a server, and it works in airplane mode. The one
+exception is the optional Character Voices feature, which the reader turns on with
+their own API key. Books
+can come from the device itself, from iCloud Drive on iPhone or iPad, or from a remote library the
+reader connects on their own — Calibre-Web, OPDS, WebDAV, Dropbox or
+OneDrive.</p>
+<p>Readmon uses a Google account only for <strong>optional reading-record
+sync</strong>, which is off by default. When a reader connects their own Google
+account, Readmon <strong>stores their reading records in the app's own storage
+space inside that account's Google Drive and reads them back on the reader's
+other devices</strong>. It requests a single permission,
+<code>drive.appdata</code>: it works only with files inside that space and
+<strong>cannot read or change any other file in the reader's Drive</strong>.</p>
+<p>The records hold reading positions, bookmarks, highlights and reviews,
+together with the titles and authors of the reader's works and
+<strong>passages quoted from books</strong>, such as the sentences the reader
+highlighted. <strong>Book files themselves are never uploaded.</strong> To show
+which account is connected, Readmon reads that account's email address and
+display name and keeps them on the device. All requests go directly from the
+reader's device to Google; they do not pass through any server of the
+developer's, and the developer cannot see this data. Details are in section 6-1
+of the <a href="privacy.html">privacy policy</a>.</p>
 
 <h2>문서</h2>
 <ul>
