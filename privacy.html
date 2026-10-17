@@ -69,7 +69,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <main>
 <h1>개인정보 처리방침</h1>
 <p><strong>Readmon</strong></p>
-<p>시행일: 2026-08-14 최종 수정일: 2026-10-08</p>
+<p>시행일: 2026-08-14 (2026-10-18에 고친 내용은 게시한 날부터) 최종 수정일: 2026-10-18</p>
 <hr>
 <h2>요약</h2>
 <p>Readmon은 <strong>회원가입이 없고, 계정을 만들지 않으며, 이용자의 개인정보를 서버로 수집하지 않습니다.</strong> 예외는 하나입니다 — AI 목소리 모델을 내려받을 때 <strong>개발자가 운영하는 서버에 남는 접속 기록</strong>(IP 주소 등)이며, 서버 운영에만 쓰고 30일이 지나면 삭제합니다(4항). 이용자가 직접 보내는 문의 메일과 스토어가 주는 판매 기록은 1항에 적습니다. 개발자는 이용자가 무슨 책을 읽는지, 무엇을 들었는지 알 수 없습니다.</p>
@@ -106,9 +106,9 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 </li>
 <li>이용 기록, 청취 기록, 읽은 책 목록을 개발자에게 전송하는 것
 </li>
-<li><strong>맞춤형(개인화) 광고</strong> — 광고는 표시하지만 아래 1-1항처럼 비개인화 광고만 요청합니다
+<li><strong>동의·허용 없는 맞춤형(개인화) 광고</strong> — 유럽경제지역(EEA)·영국·스위스에서는 동의 메시지에서 동의했을 때만, iPhone·iPad에서는 앱 추적 투명성(ATT) 허용을 받았을 때만 요청합니다. 그 밖의 지역의 Android에서는 앱이 따로 묻지 않고 기기의 광고 설정을 따릅니다(1-1항)
 </li>
-<li>이용자 추적 — iPhone·iPad에서는 App Tracking Transparency가 말하는 추적(tracking)을 하지 않으며 그 허용을 묻지 않습니다. Android에서도 맞춤형 광고를 요청하지 않습니다(1-1항)
+<li>허용 없는 이용자 추적 — iPhone·iPad에서는 ATT 허용을 받았을 때만 광고 식별자가 광고에 쓰입니다(1-1항)
 </li>
 <li>제3자 분석 도구(Google Analytics, Firebase Analytics, Sentry, Crashlytics 등) 탑재 — 다만 Android용 앱의 음성 합성 라이브러리와 글자 인식 라이브러리가 스스로 보내는 사용 통계가 있으며, 아래에 따로 적습니다
 </li>
@@ -117,9 +117,9 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 </ul>
 <p>앱에 포함된 외부 라이브러리는 다음과 같습니다.</p>
 <ul>
-<li><strong>iPhone·iPad에서는</strong> 압축 파일 처리(ZIPFoundation, Unrar, SWCompression)와 음성 합성(FluidAudio), 광고 표시(Google Mobile Ads SDK — 여기에 딸려 들어오는 Google User Messaging Platform은 앱이 호출하지 않습니다)를 위한 것입니다. 광고 SDK가 처리하는 정보는 1-1항에 적습니다. 그 밖의 라이브러리 중 이용자 정보를 수집하는 것은 없습니다.
+<li><strong>iPhone·iPad에서는</strong> 압축 파일 처리(ZIPFoundation, Unrar, SWCompression)와 음성 합성(FluidAudio), 광고 표시(Google Mobile Ads SDK)와 광고 동의 메시지(Google User Messaging Platform)를 위한 것입니다. 광고 SDK와 동의 메시지가 처리하는 정보는 1-1항에 적습니다. 그 밖의 라이브러리 중 이용자 정보를 수집하는 것은 없습니다.
 </li>
-<li><strong>Android에서는</strong> 화면·데이터 저장·재생을 위한 Android Jetpack(AndroidX·Room·Media3), 압축 파일 처리(Apache Commons Compress, junrar, XZ for Java), 통신(OkHttp), 음성 합성(Microsoft의 <strong>ONNX Runtime</strong>), 그리고 Google이 제공하는 넷 — PDF·이미지의 글자 인식(<strong>Google ML Kit</strong>, 3항), Google 계정 연결(Google Play 서비스, 6-1항), 결제(Google Play 결제 라이브러리), 광고 표시(Google Mobile Ads SDK, 1-1항) — 입니다. Google이 제공하는 넷은 각자의 기능을 위해 Google과 통신하며, 그 처리에는 Google의 정책이 적용됩니다.
+<li><strong>Android에서는</strong> 화면·데이터 저장·재생을 위한 Android Jetpack(AndroidX·Room·Media3), 압축 파일 처리(Apache Commons Compress, junrar, XZ for Java), 통신(OkHttp), 음성 합성(Microsoft의 <strong>ONNX Runtime</strong>), 그리고 Google이 제공하는 다섯 — PDF·이미지의 글자 인식(<strong>Google ML Kit</strong>, 3항), Google 계정 연결(Google Play 서비스, 6-1항), 결제(Google Play 결제 라이브러리), 광고 표시(Google Mobile Ads SDK, 1-1항), 광고 동의 메시지(Google User Messaging Platform, 1-1항) — 입니다. Google이 제공하는 다섯은 각자의 기능을 위해 Google과 통신하며, 그 처리에는 Google의 정책이 적용됩니다.
 <ul>
 <li><strong>ONNX Runtime이 보내는 사용 통계</strong> — Microsoft가 공개한 ONNX Runtime의 개인정보 안내에 따르면, <strong>Android용 앱 1.1(빌드 번호 8)까지</strong>에 들어 있는 ONNX Runtime은 <strong>기본 설정으로 사용 통계를 Microsoft에 보냅니다.</strong> 내용에는 라이브러리의 버전, 기기의 운영체제·CPU·메모리와 통신망 종류 같은 환경 정보, 음성 합성 모델을 불러온 기록(모델 파일 이름 등)과 오류 같은 동작 기록, 그리고 Android가 제공하는 기기 식별자(ANDROID_ID)가 포함됩니다. <strong>책·문장·만들어진 음성이 담기도록 되어 있지는 않습니다</strong>(Microsoft의 안내와 공개된 소스 코드에서 확인한 범위입니다). 이 정보는 개발자에게 전달되지 않으며, 그 처리에는 Microsoft의 개인정보처리방침(https://privacy.microsoft.com/privacystatement)이 적용됩니다. <strong>그다음 빌드부터는 이 전송을 끕니다.</strong>
 </li>
@@ -130,15 +130,59 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 </ul>
 <p>앱 안의 구매는 <strong>iPhone·iPad에서는 App Store를 통해 Apple이, Android에서는 Google Play를 통해 Google이 결제·환불을 처리</strong>합니다. 앱은 결제수단 정보를 받지 않으며, 구매 확인은 기기 안에서 이루어지고 개발자의 서버로 보내지 않습니다. 각 스토어가 개발자에게 제공하는 판매·정산 보고서에는 주문 번호·상품·금액·구매 국가 같은 거래 정보가 담깁니다. 스토어가 그 밖에 어떤 구매자 정보를 개발자에게 보여 주는지와 결제에 관한 개인정보 처리에는 Apple과 Google의 방침이 적용됩니다.</p>
 <h3>1-1. 광고 표시</h3>
-<p>서재 화면 하단에 배너 광고가 표시됩니다. 책을 읽거나 듣는 화면에는 광고가 없습니다.</p>
+<p>서재 화면 하단에 배너 광고가 표시됩니다. 책을 읽거나 듣는 화면에는 배너 광고가 없고, 이용자가 아래 「광고 보고 AI 낭독 시간 받기」 버튼을 직접 눌렀을 때만 전체 화면 광고가 표시됩니다.</p>
 <ul>
-<li>광고는 <strong>Google AdMob</strong>(Google Mobile Ads SDK)이 게재합니다. 앱은 SDK에 <strong>비개인화 광고만</strong> 요청하도록 고정되어 있습니다(<code>npa=1</code>). 이용자의 관심사· 이용 기록을 근거로 한 맞춤형 광고는 요청하지 않습니다. 그래서 <strong>iPhone·iPad에서는</strong> 앱 추적 투명성(ATT) 허용을 묻지 않습니다. <strong>Android에서는</strong> 광고 SDK가 기기의 광고 ID를 읽을 수 있는 권한(<code>AD_ID</code>)이 앱에 함께 들어 있습니다(SDK가 스스로 넣는 권한입니다). 이용자는 기기 설정에서 광고 ID를 재설정하거나 삭제할 수 있습니다.
+<li>광고는 <strong>Google AdMob</strong>(Google Mobile Ads SDK)이 게재합니다.
 </li>
-<li>비개인화 광고를 게재하기 위해 SDK는 광고 요청 시 <strong>기기 정보(기종·OS 버전·언어· 대략적 위치(IP 기반)·광고 식별자)</strong>를 Google에 전송할 수 있습니다. Android에서는 Google의 공개 자료에 따라 IP 주소, 앱 실행·탭 같은 상호작용, 성능 진단 정보, 광고 ID와 <strong>앱 세트 ID</strong>가 여기에 해당합니다(암호화된 통신). 이 정보는 광고 게재, 노출 빈도 제한, 사기 방지, 집계 통계에 쓰이며 <strong>개발자에게는 전달되지 않습니다.</strong> Google의 처리 방식은 Google 개인정보처리방침 (https://policies.google.com/privacy)과 Google 광고 기술 정책을 따릅니다.
+<li><strong>동의 메시지 — 유럽경제지역(EEA)·영국·스위스의 이용자.</strong> 앱 소개를 닫은 뒤 처음 광고가 표시되기 직전에 Google의 동의 메시지(Google User Messaging Platform)가 표시됩니다. 이용자는 맞춤형 광고와 기기의 정보 저장·접근에 동의하거나 「동의 안 함」을 고를 수 있습니다. 고른 내용은 기기에 저장되어 광고 요청에 함께 쓰이며, 동의 메시지가 처리하는 정보에는 Google의 정책이 적용됩니다. 동의하지 않으면 맞춤형이 아닌 광고나, 광고 개인화와 노출 빈도 제한처럼 기기 식별자가 필요한 기능 없이 내보내는 제한된 광고만 표시되며 광고가 표시되지 않을 수도 있습니다. 고른 내용은 앱의 <strong>설정 &gt; 정보 &gt; 「개인정보 옵션」</strong>에서 언제든 바꿀 수 있습니다.
+</li>
+<li><strong>맞춤형(개인화) 광고가 요청되는 조건</strong>
+<ul>
+<li><strong>유럽경제지역·영국·스위스</strong> — 동의 메시지에서 고른 대로 정해집니다. iPhone·iPad에서는 아래 ATT 허용도 함께 있어야 합니다.
+</li>
+<li><strong>iPhone·iPad</strong> — 앱 추적 투명성(ATT) 허용을 받았을 때만 맞춤형 광고에 광고 식별자(IDFA)가 쓰입니다. 앱은 소개를 닫고 처음 서재에 들어올 때 한 번 허용을 묻습니다(동의 메시지에서 거절했으면 묻지 않습니다). 허용하지 않으면 맞춤형이 아닌 광고를 요청합니다(<code>npa=1</code>). 허용은 기기의 <strong>설정 &gt; 개인정보 보호 및 보안 &gt; 추적</strong>에서 언제든 끌 수 있습니다.
+</li>
+<li><strong>Android(유럽경제지역·영국·스위스 밖)</strong> — 앱이 따로 묻지 않고 기기의 광고 설정을 따릅니다. 광고 ID를 삭제하지 않았다면 맞춤형 광고가 요청될 수 있습니다. 광고 SDK가 기기의 광고 ID를 읽을 수 있는 권한(<code>AD_ID</code>)이 앱에 함께 들어 있습니다(SDK가 스스로 넣는 권한입니다). 이용자는 기기 설정에서 광고 ID를 삭제할 수 있고, 삭제하면 광고 ID가 광고에 쓰이지 않습니다.
+</li>
+</ul>
+</li>
+<li><strong>앱 버전 1.2.4부터</strong> 위와 같이 동작합니다. 그 전 버전은 지역·기기와 관계없이 맞춤형이 아닌 광고를 요청하며(<code>npa=1</code>) 동의 메시지도 ATT 허용 요청도 띄우지 않습니다.
+</li>
+<li>광고를 게재하기 위해 SDK는 광고 요청 시 <strong>기기 정보(기종·OS 버전·언어· 대략적 위치(IP 기반)·광고 식별자)</strong>를 Google에 전송할 수 있습니다. Android에서는 Google의 공개 자료에 따라 IP 주소, 앱 실행·탭 같은 상호작용, 성능 진단 정보, 광고 ID와 <strong>앱 세트 ID</strong>가 여기에 해당합니다(암호화된 통신). 이 정보는 광고 게재, 노출 빈도 제한, 사기 방지, 집계 통계에 쓰이고, 이용자가 위처럼 허락한 조건에서는 맞춤형 광고에도 쓰이며, <strong>개발자에게는 전달되지 않습니다.</strong> Google의 처리 방식은 Google 개인정보처리방침 (https://policies.google.com/privacy)과 Google 광고 기술 정책을 따릅니다.
 </li>
 <li>개발자는 광고를 통해 이용자를 식별하지 않으며, 광고 SDK가 처리한 정보를 받지도 보관하지도 않습니다.
 </li>
-<li><strong>광고 제거 상품</strong> 또는 <strong>AI 보이스 영구 이용권</strong>을 구매하면 광고가 표시되지 않고 광고 요청도 일어나지 않습니다.
+<li><strong>광고 제거 상품</strong> 또는 <strong>AI 보이스 영구 이용권</strong>을 구매하거나 <strong>AI 보이스 월 구독</strong>을 이용하는 동안에는 광고가 표시되지 않고 광고 요청도 일어나지 않으며, 동의 메시지와 ATT 허용도 묻지 않습니다. 월 구독이 끝나면 광고가 다시 표시됩니다. 다만 광고 제거 상품만 구매한 이용자가 아래 보상형 광고를 직접 이용할 때는 예외입니다.
+</li>
+<li><strong>광고 보고 AI 낭독 시간 받기(보상형 광고).</strong> AI 보이스를 구매하지 않은 이용자는 버튼을 눌러 광고 한 편을 끝까지 보면 AI 낭독 10분을 받습니다(하루 4편, 받은 시간은 2시간까지 모아 둘 수 있습니다). 광고는 버튼을 누를 때만 표시되고, 낭독이 소리를 내는 동안에는 버튼을 쓸 수 없습니다. 버튼이 보이는 화면에서 다음 광고를 미리 불러오는 요청이 일어날 수 있으며, 이 요청에도 위의 동의 메시지 결과와 맞춤형 광고 조건이 그대로 적용됩니다. 동의 메시지를 한 번도 거치지 않은 이용자(유럽경제지역·영국·스위스)는 버튼을 처음 누를 때 동의 메시지가 먼저 표시되며, ATT 허용은 이 버튼에서 묻지 않습니다. 받은 시간·쓴 시간·날짜별 시청 편수 기록은 기기에만 저장되고 개발자나 Google에 따로 전송되지 않습니다. iOS(iPhone·iPad)는 이 기록을 키체인에도 저장하므로 앱을 지워도 남을 수 있습니다.
+</li>
+</ul>
+<h3>1-2. 제3자가 수집해 가는 행태정보의 수집·이용 및 거부</h3>
+<p>Readmon은 위 광고를 위해 앱 안의 광고 SDK가 아래 행태정보를 Google로 수집해 가도록 허용합니다. 개발자는 이 정보를 직접 수집하거나 저장하지 않습니다.</p>
+<div class="table-wrap"><table><thead><tr>
+<th>수집 장치</th>
+<th>장치 종류</th>
+<th>수집해 가는 사업자</th>
+<th>수집해 가는 행태정보</th>
+<th>목적</th>
+</tr></thead><tbody>
+<tr><td>Google Mobile Ads SDK</td><td>SDK(모바일 앱)</td><td>Google LLC</td><td>광고 식별자(iPhone·iPad의 IDFA — ATT 허용 시에만, Android의 광고 ID), IP 주소, 기기·앱 정보, 광고 노출·클릭 같은 광고 상호작용</td><td>광고 게재, 맞춤형 광고(1-1항의 조건에서), 광고 성과 측정, 부정 클릭 방지</td></tr>
+<tr><td>Google User Messaging Platform</td><td>SDK(모바일 앱)</td><td>Google LLC</td><td>동의 메시지에서 고른 내용, 기기·앱 정보</td><td>동의 메시지를 띄울 지역인지 판단, 유럽경제지역·영국·스위스에서 동의를 받고 기록</td></tr>
+</tbody></table></div>
+<ul>
+<li>수집해 간 정보의 보유·이용 기간은 Google이 정하며, Google의 광고 정보 처리 방식 (https://policies.google.com/technologies/ads)을 따릅니다.
+</li>
+<li><strong>거부 방법</strong> — 맞춤형 광고를 거부해도 광고는 표시될 수 있으며, 맞춤형이 아닌 광고로 바뀝니다. 기기의 운영체제 버전에 따라 메뉴 이름이 다를 수 있습니다.
+<ul>
+<li>iPhone·iPad: 기기의 설정 &gt; 개인정보 보호 및 보안 &gt; 추적에서 Readmon의 허용을 끕니다
+</li>
+<li>Android: 기기 설정에서 광고 ID를 삭제합니다
+</li>
+<li>유럽경제지역·영국·스위스: 앱의 설정 &gt; 정보 &gt; 「개인정보 옵션」에서 동의를 바꿉니다
+</li>
+</ul>
+</li>
+<li>광고 제거 상품·AI 보이스 이용권을 구매했거나 월 구독을 이용하는 동안에는 광고 요청이 없으므로 수집해 가는 정보도 없습니다(1-1항). 다만 광고 제거 상품만 구매한 이용자가 보상형 광고를 직접 이용하면 그 광고 요청에는 1-1항이 그대로 적용됩니다.
 </li>
 </ul>
 <hr>
@@ -165,7 +209,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 </li>
 <li><strong>Android에서는</strong> 앱이 Android의 <strong>자동 백업</strong>을 쓰도록 설정되어 있습니다. 이용자가 기기에서 백업을 켜 두었으면 앱 데이터가 <strong>이용자의 Google 계정 백업</strong>에 저장됩니다.
 <ul>
-<li><strong>포함되는 것</strong> — 서재와 독서 기록의 데이터(작품 정보, 읽은 위치, 책갈피, 하이라이트, 메모·별점·감상평, 읽은 시간·들은 시간, 컬렉션)와, Google 동기화에 쓰려고 보관한 그 기록의 사본·변경 내역과 기록이 연결된 계정을 가리키는 계정 ID의 해시값(이메일 주소가 아닙니다), 원격 서재의 주소·아이디와 폴더 목록(비밀번호는 제외), 읽기·낭독 설정과 인물별 목소리 배정(책 정보에 함께 저장된 인물 이름·성별 포함), 무료 체험으로 쓴 시간, 이용자가 넣은 글꼴, 앱이 기기에 남긴 비정상 종료 기록
+<li><strong>포함되는 것</strong> — 서재와 독서 기록의 데이터(작품 정보, 읽은 위치, 책갈피, 하이라이트, 메모·별점·감상평, 읽은 시간·들은 시간, 컬렉션)와, Google 동기화에 쓰려고 보관한 그 기록의 사본·변경 내역과 기록이 연결된 계정을 가리키는 계정 ID의 해시값(이메일 주소가 아닙니다), 원격 서재의 주소·아이디와 폴더 목록(비밀번호는 제외), 읽기·낭독 설정과 인물별 목소리 배정(책 정보에 함께 저장된 인물 이름·성별 포함), 무료 체험으로 쓴 시간, 광고로 받은 AI 낭독 시간 기록(1-1항), 이용자가 넣은 글꼴, 앱이 기기에 남긴 비정상 종료 기록
 </li>
 <li><strong>제외되는 것</strong> — 책 파일, 표지 이미지, EPUB에서 꺼낸 그림·글꼴, 원격 서재에서 받은 책 사본, AI 목소리 모델 파일, 「인물별 목소리」의 판별 기록 파일(3-1항), Google 동기화 연결 정보(연결한 계정의 이메일 주소·표시 이름과 동기화를 켰는지 — 6-1항), 그리고 <strong>Android Keystore</strong>의 키로 암호화해 둔 비밀번호·인증 토큰·「인물별 목소리」 API 키(5-3항)
 </li>
@@ -186,7 +230,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 </li>
 <li>낭독 중에는 네트워크 연결이 필요하지 않습니다. 비행기 모드에서도 동작합니다.
 </li>
-<li>PDF의 글자 인식(스캔한 책을 읽어 주는 기능)도 기기 안에서 이루어지며, 이미지나 인식된 글자가 외부로 전송되지 않습니다.
+<li>PDF의 글자 인식(스캔한 책을 읽어 주는 기능)도 기기 안에서 이루어지며, 이미지와 인식된 글자는 외부로 전송되지 않습니다. 다만 「인물별 목소리」를 켠 PDF는 인식한 본문을 3-1항대로 Google에 보냅니다.
 <ul>
 <li><strong>iPhone·iPad에서는</strong> Apple이 제공하는 기기 내 문자 인식 기능(Vision)을 사용합니다.
 </li>
@@ -225,8 +269,8 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <th>내용</th>
 </tr></thead><tbody>
 <tr><td><strong>전송처</strong></td><td><code>generativelanguage.googleapis.com</code> (Google LLC의 Gemini API). 이용자의 기기에서 <strong>직접</strong> 전송되며 <strong>개발자의 서버를 거치지 않습니다</strong></td></tr>
-<tr><td><strong>전송 시점</strong></td><td>이용자가 키를 넣고 이 기능을 켠 상태로, TXT·EPUB 책의 낭독을 재생할 때. PDF·만화에서는 동작하지 않습니다</td></tr>
-<tr><td><strong>전송 내용</strong></td><td><strong>지금 읽는 회차(챕터)와 바로 다음 회차의 본문 문단</strong>입니다(다음 회차는 끊김 없이 이어 읽기 위해 미리 보냅니다). 회차의 제목과 첫머리 문단은 보내지 않으며, 나머지는 요약하거나 줄이지 않고 그대로 보냅니다</td></tr>
+<tr><td><strong>전송 시점</strong></td><td>이용자가 키를 넣고 이 기능을 켠 상태로, TXT·EPUB·PDF 책의 낭독을 재생할 때입니다. PDF는 「대사 목소리」의 「이런 책에서도 사용」까지 켜야 동작하며, 만화(이미지로 된 책)에서는 동작하지 않습니다</td></tr>
+<tr><td><strong>전송 내용</strong></td><td><strong>지금 읽는 회차(챕터)와 바로 다음 회차의 본문 문단</strong>입니다(다음 회차는 끊김 없이 이어 읽기 위해 미리 보냅니다). PDF는 회차가 없어 쪽을 대략 한 회차 분량(3~30쪽)씩 묶은 것을 한 회차로 보고, 기기 안에서 글자를 인식한 결과를 보냅니다. 회차의 제목과 첫머리 문단은 보내지 않으며, 나머지는 요약하거나 줄이지 않고 그대로 보냅니다</td></tr>
 <tr><td><strong>전송하지 않는 것</strong></td><td>책 제목·저자·파일명, 이용자의 이름·이메일·기기 식별자, 읽은 기록. 프롬프트에 들어가지 않습니다</td></tr>
 <tr><td><strong>사용 모델</strong></td><td><code>gemini-3.5-flash-lite</code></td></tr>
 <tr><td><strong>API 키</strong></td><td>전송 요청의 인증 헤더로만 쓰입니다. <strong>개발자에게 전송되지 않으며</strong>, 개발자는 이용자의 키를 알 수 없습니다</td></tr>
@@ -252,7 +296,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <li>Google 개인정보처리방침: https://policies.google.com/privacy
 </li>
 </ul>
-<p><strong>전송량의 상한.</strong> 앱은 하루 100회차(API 호출 300회)를 넘기지 않도록 스스로 제한합니다. 다만 이 상한은 <strong>요금이 부과되지 않음을 보장하지 않습니다</strong> — 결제가 연결된 키를 넣으면 그 호출은 이용자에게 청구됩니다. 앱은 이용자의 키가 어느 쪽인지 알 수 없으므로, 키를 넣기 전 화면에서 이 점을 안내합니다.</p>
+<p><strong>전송량의 상한.</strong> 앱은 하루 100회차(PDF는 묶음, API 호출 300회)를 넘기지 않도록 스스로 제한합니다. 다만 이 상한은 <strong>요금이 부과되지 않음을 보장하지 않습니다</strong> — 결제가 연결된 키를 넣으면 그 호출은 이용자에게 청구됩니다. 앱은 이용자의 키가 어느 쪽인지 알 수 없으므로, 키를 넣기 전 화면에서 이 점을 안내합니다.</p>
 <hr>
 <h2>4. AI 목소리 모델 내려받기</h2>
 <p>AI 목소리를 사용하려면 음성 합성 모델을 기기에 내려받아야 합니다. 이 파일은 앱 설치 파일에 포함되어 있지 않습니다(앱 용량을 줄이고, AI 목소리를 쓰지 않는 이용자가 받지 않아도 되게 하기 위함입니다).</p>
@@ -367,7 +411,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <li><strong>인물별 목소리 배정</strong> — 서술과 대사에 쓸 목소리의 선택. 책에 나오는 등장인물의 이름은 올리지 않습니다.
 </li>
 </ul>
-<p>이와 별도로, iCloud에 로그인되어 있으면 위 스위치와 상관없이 <strong>AI 보이스 무료 체험으로 쓴 시간</strong>이 iCloud 키-값 저장소에 저장됩니다. 기기를 바꿔도 체험 시간이 이어지게 하기 위한 것입니다.</p>
+<p>이와 별도로, iCloud에 로그인되어 있으면 위 스위치와 상관없이 <strong>AI 보이스 무료 체험으로 쓴 시간</strong>이 iCloud 키-값 저장소에 저장됩니다. 기기를 바꿔도 체험 시간이 이어지게 하기 위한 것입니다. 광고로 받은 AI 낭독 시간 기록은 iCloud에 저장하지 않고 기기마다 따로 셉니다.</p>
 <p><strong>iCloud Drive 서재는 기본으로 꺼져 있습니다.</strong> 이용자가 설정에서 「iCloud Drive 서재 사용」을 켠 뒤 책마다 「iCloud에 백업」을 누르면, 그 책 파일이 iCloud Drive의 앱 폴더에 저장됩니다. 파일 앱에서 직접 확인하고 삭제할 수 있습니다.</p>
 <p>이 정보는 <strong>Apple의 iCloud 계정 안에 있으며 개발자는 접근할 수 없습니다.</strong> iCloud에 저장된 정보의 처리에는 Apple의 개인정보 처리방침이 적용됩니다.</p>
 <p>기록 동기화를 끄면 그 뒤로는 위 기록을 iCloud에 저장하지 않습니다(무료 체험 시간은 스위치와 상관없이 계속 저장됩니다). iCloud Drive에 올린 책 파일은 이용자가 파일 앱에서 삭제할 수 있습니다.</p>
@@ -463,7 +507,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <h2>8. 이용자의 권리</h2>
 <p>개발자가 보유하는 이용자 정보는 AI 목소리 모델을 내려받을 때 서버에 남는 접속 기록(4항)과 이용자가 보낸 문의 메일(1항)이며, 스토어가 개발자에게 주는 판매 기록은 1항에 적었습니다. 접속 기록은 이름이나 계정과 이어져 있지 않으며 30일이 지나면 삭제됩니다. 접속 기록과 문의 메일에 관한 열람·삭제 요청은 9항의 문의처로 할 수 있습니다. 그 밖에 기기에 저장된 정보는 이용자가 직접 통제합니다.</p>
 <ul>
-<li>앱 삭제 — 기기에 저장된 모든 정보가 함께 삭제됩니다(iCloud나 Google 계정에 저장한 것과 기기 백업에 들어간 것은 남습니다 — 6항, 6-1항, 2-1항). 다만 iPhone·iPad에서 키체인에 둔 정보는 앱을 지워도 기기에 남을 수 있습니다(무료 체험 사용 시간은 다시 설치해도 체험이 새로 시작되지 않도록 일부러 남깁니다)
+<li>앱 삭제 — 기기에 저장된 모든 정보가 함께 삭제됩니다(iCloud나 Google 계정에 저장한 것과 기기 백업에 들어간 것은 남습니다 — 6항, 6-1항, 2-1항). 다만 iPhone·iPad에서 키체인에 둔 정보는 앱을 지워도 기기에 남을 수 있습니다(무료 체험 사용 시간과 광고로 받은 AI 낭독 시간 기록은 다시 설치해도 새로 시작되지 않도록 일부러 남깁니다)
 </li>
 <li>원격 서재·클라우드 연결 해제 — 저장된 접속 정보가 삭제됩니다
 </li>
@@ -471,7 +515,15 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 </li>
 <li>기기 백업 끄기 — iCloud 백업·Google 계정 백업은 기기의 설정에서 끌 수 있습니다(2-1항)
 </li>
-<li>광고 ID — Android에서는 기기 설정에서 광고 ID를 재설정하거나 삭제할 수 있습니다(1-1항)
+<li>맞춤형 광고 철회 — 세 길이 있습니다(1-1항)
+<ul>
+<li>iPhone·iPad: 기기의 설정 &gt; 개인정보 보호 및 보안 &gt; 추적에서 Readmon의 허용을 끕니다
+</li>
+<li>유럽경제지역·영국·스위스: 앱의 설정 &gt; 정보 &gt; 「개인정보 옵션」에서 동의를 바꿉니다
+</li>
+<li>Android: 기기 설정에서 광고 ID를 삭제합니다
+</li>
+</ul>
 </li>
 <li>Google 동기화 연결 해제 — 동기화가 중단되고 기기에 저장된 계정 정보(이메일 주소·표시 이름)와 인증 토큰이 삭제됩니다. <strong>Google 계정에 저장된 독서 기록은 연결 해제만으로는 지워지지 않으며</strong>, Google Drive의 앱 관리에서 이용자가 직접 삭제합니다(6-1항)
 </li>
@@ -505,7 +557,7 @@ img.hero-mark { width:104px; height:104px; border-radius:22.37%; display:block;
 <p>이 방침이 변경되면 변경 내용과 시행일을 이 페이지에 게시합니다. 이용자에게 불리한 변경의 경우 시행일 30일 전부터 게시합니다.</p>
 <hr>
 <blockquote>
-<p><strong>이 문서는 법률 전문가의 검토를 거치지 않은 초안입니다.</strong> 내용은 2026-08-31 기준 앱의 실제 동작을 코드에서 확인해 작성했고, 2026-10-03에 Google 동기화(6-1항), Android용 앱의 동작, 모델 내려받기 서버, iCloud 동기화, 기기 백업, 표지 웹 검색을 두 플랫폼의 코드에서 다시 확인해 고쳤습니다. 2026-10-04에 Android 기기 백업에서 빠지는 것(AI 목소리 모델 파일·「인물별 목소리」의 판별 기록·Google 동기화 연결 정보)을 고쳤습니다. 앱의 동작이 바뀌면 이 문서도 함께 고쳐야 합니다.</p>
+<p><strong>이 문서는 법률 전문가의 검토를 거치지 않은 초안입니다.</strong> 내용은 2026-08-31 기준 앱의 실제 동작을 코드에서 확인해 작성했고, 2026-10-03에 Google 동기화(6-1항), Android용 앱의 동작, 모델 내려받기 서버, iCloud 동기화, 기기 백업, 표지 웹 검색을 두 플랫폼의 코드에서 다시 확인해 고쳤습니다. 2026-10-04에 Android 기기 백업에서 빠지는 것(AI 목소리 모델 파일·「인물별 목소리」의 판별 기록·Google 동기화 연결 정보)을 고쳤습니다. 2026-10-17에 광고 동의 메시지·ATT·맞춤형 광고(1-1항)와 행태정보(1-2항)를 적었습니다. 앱의 동작이 바뀌면 이 문서도 함께 고쳐야 합니다.</p>
 </blockquote>
 </main>
 <footer>Readmon · 개발자 이민행 · <a href="mailto:contact@mindollab.com">contact@mindollab.com</a></footer>
